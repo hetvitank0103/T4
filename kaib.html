@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="u1"/>
+    <input type="password" id="p1"/>
+    <button onclick="checkval()">
+        Submit
+    </button>
+    <p id="msg"></p>
+    <script>
+        function checkval()
+        {
+            var v1=document.getElementById("u1").value;
+            var v2=document.getElementById("p1").value;
+            var m=document.getElementById("msg").value;
+            var pat1=/^[@_0-9]/;
+            var pat2=/^[A-Za-z@!_-]{6,12}$/;
+            if(v1.length===0 || v2.length===0)
+        {
+            m.innerHTML="Fileds are mendatory";
+        }
+        else if(pat1.test(v1))
+        {
+            m.innerHTML="username must not start with @_ or digit";
+        }
+        else if(!pat2.test(v2))
+        {
+            m.innerHTML="Only 6-12"
+        }
+        else
+        {
+            m.innerHTML=`Welcome ${v1}`
+        }
+        }
+    </script>
+</body>
+</html>

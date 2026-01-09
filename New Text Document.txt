@@ -1,0 +1,20 @@
+%%writefile 8_display_data.py
+import streamlit as st
+import pandas as pd
+
+st.title("Displaying data in streamlit")
+data={
+    "Student:":['A','B','C','D'],
+    "Marks:":[40,55,68,97],
+    "Passed:":[True,True,False,True]
+}
+df=pd.DataFrame(data)
+
+st.subheader("st.dataframe() (interactive)")
+st.dataframe(df)
+
+st.subheader("st.table() (static)")
+st.table(df)
+
+st.subheader("st.json() (structured JSON)")
+st.json(data)

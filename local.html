@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>local storage</title>
+</head>
+<body>
+    <script>
+        localStorage.setItem("username","ABC");
+        sessionStorage.setItem("email","a@gmail.com");
+        var v1=localStorage.getItem("uname");
+        var v2=sessionStorage.getItem("email");
+        console.log(v1,v2);
+        localStorage.removeItem("uname");
+        sessionStorage.removeItem("email");
+        localStorage.clear();
+        sessionStorage.clear();
+    </script>
+</body>
+</html>
